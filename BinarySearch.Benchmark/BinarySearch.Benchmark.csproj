@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\32BitBinaryState\BinaryState.csproj" />
+    <ProjectReference Include="..\BinaryState\BinaryState.csproj" />
   </ItemGroup>
 
 </Project>
