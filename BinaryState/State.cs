@@ -48,11 +48,11 @@ namespace BinaryState
             {
                 if (bitValue)
                 {
-                    data |= (1ul << length - index);
+                    data |= (unit << length - index);
                 }
                 else
                 {
-                    data = ~(~data | (1ul << length - index));
+                    data = ~(~data | (unit << length - index));
                 }
             }
         }
@@ -63,7 +63,7 @@ namespace BinaryState
 
             lock (this._stateLock)
             {
-                return (((data << index) >>> length) & 1ul) == 1;
+                return (((data << index) >>> length) & unit) == 1;
             }
         }
 
@@ -99,7 +99,7 @@ namespace BinaryState
 
         public override int GetHashCode()
         {
-            return ((this.data << 1)>>>1).GetHashCode();
+            return ((this.data << 1) >>> 1).GetHashCode();
         }
     }
 }
