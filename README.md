@@ -61,4 +61,4 @@ Compares two separate but identical collections
 
 
 ## What Next?
-If I were to dig further into it I'd want to look at optimising the getters and setters in States to see if there's any time to be shaved off, 14ns is good, but it would be interesting to see if there is any time that can be shaved off
+If I were to dig further into it I'd want to look at optimising the getters and setters in States to see if there's any time to be shaved off, 14ns is good, but it would be interesting to see if there is any time that can be shaved off.  I suspect moving everything from State to States and having the data in the States array be `ulong` rather than `State` would be a start.
