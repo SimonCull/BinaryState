@@ -99,5 +99,28 @@ namespace BinaryState
         {
             return HashCode.Combine(states.GetHashCode(), this.length);
         }
+
+        public List<bool> ToList()
+        {
+            var list = new List<bool>();
+            list.AddRange(this.ToArray());
+
+            return list;
+        }
+
+        public bool[] ToArray()
+        {
+            var array = new bool[this.length];
+            var position = this.length;
+
+            for (int i = 0; i < states.Length; i++)
+            {
+                var data = states[i].ToArray();
+                data.ToArray().CopyTo(array, position);
+                position += data.Length;
+            }
+
+            return array;
+        }
     }
 }

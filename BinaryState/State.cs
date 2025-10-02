@@ -101,5 +101,16 @@ namespace BinaryState
         {
             return ((this.data << 1) >>> 1).GetHashCode();
         }
+
+        public bool[] ToArray()
+        {
+            var array = new bool[length];
+
+            for(var i  = 0; i < length; i++)
+            {
+                array[i] = this.GetState(i);
+            }
+            return array;
+        }
     }
 }
