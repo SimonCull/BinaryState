@@ -21,11 +21,11 @@ Surprisingly yes, I compared setting a specific index, getting a specific index,
 
 ### Test Data
 The test data contains 1,000,000 randomly boolean values which is then stored in various formats:
-* List<bool>
-* Dictionary<int,bool>
+* List\<bool>
+* Dictionary<int, bool>
 * StringBuilder
 * bool[]
-* States - the result of this project
+* States
   
 There is also a target index which is the target for both Get and Set tests (initially 500,000, now random from the range).
 
