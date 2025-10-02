@@ -38,20 +38,14 @@ namespace BinaryState
         {
             ValidateIndex(index);
 
-            int collectionNumber = index / State.MaxLength;
-            int stateindex = index % State.MaxLength;
-
-            return states[collectionNumber].GetState(stateindex);
+            return states[index / State.MaxLength].GetState(index % State.MaxLength);
         }
 
         public void SetState(int index, bool value)
         {
             ValidateIndex(index);
 
-            int collectionNumber = index / State.MaxLength;
-            int stateindex = index % State.MaxLength;
-
-            states[collectionNumber].SetState(stateindex, value);
+            states[index / State.MaxLength].SetState(index % State.MaxLength, value);
         }
 
         void ValidateIndex(int index)
