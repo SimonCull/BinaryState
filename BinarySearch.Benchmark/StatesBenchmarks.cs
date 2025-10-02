@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace BinarySearch.Benchmark
 {
-
     public class StatesBenchmarkTestData
     {
         private readonly bool[] testData;
@@ -41,7 +40,7 @@ namespace BinarySearch.Benchmark
 
             for (var i = 0; i < testData.Length; i++)
             {
-                states.SetState(i,testData[i]);
+                states.SetState(i, testData[i]);
                 dictionary.Add(i, testData[i]);
                 stringBuilder.Append(testData[i]);
             }
@@ -87,6 +86,7 @@ namespace BinarySearch.Benchmark
         {
             return testData.stringBuilder[testData.indexToFind] == '1';
         }
+
         [Benchmark]
         public bool Array_GetItem()
         {
@@ -122,6 +122,7 @@ namespace BinarySearch.Benchmark
         {
             testData.stringBuilder[testData.indexToFind] = '1';
         }
+
         [Benchmark]
         public void Array_SetItem()
         {
