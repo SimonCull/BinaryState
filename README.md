@@ -17,9 +17,11 @@ The test data contains 1,000,000 randomly boolean values which is then stored in
 * StringBuilder
 * bool[]
 * States - the result of this project
+  
 There is also a target index which is the target for both Get and Set tests (initially 500,000, now random from the range).
 
 ### Set Item
+Sets a specific index to `true`
 | Method | Mean | Error | StdDev
 | :----------------------   | --------------:   | -----------:  | ----------:
 | List_SetItem | 1.3268 ns | 0.0379 ns | 0.0317 ns
@@ -29,6 +31,7 @@ There is also a target index which is the target for both Get and Set tests (ini
 | States_SetItem | 14.8301 ns | 0.1044 ns | 0.0872 ns
 
 ### Get Item
+Gets a specific index
 | Method | Mean | Error | StdDev
 | :----------------------   | --------------:   | -----------:  | ----------:
 | List_GetItem | 0.3262 ns | 0.0337 ns | 0.0315 ns
@@ -37,7 +40,8 @@ There is also a target index which is the target for both Get and Set tests (ini
 | Array_GetItem | 0.0586 ns | 0.0149 ns | 0.0139 ns
 | States_GetItem | 14.2449 ns | 0.0456 ns | 0.0426 ns
 
-### Compare Identical Collections
+### Compare
+Compares two separate but identical collections
 | Method | Mean | Error | StdDev
 | :----------------------   | --------------:   | -----------:  | ----------:
 | List_Compare | 1,437.5 us | 15.55 us | 12.98 us
