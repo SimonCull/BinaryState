@@ -5,11 +5,10 @@ using BinarySearch.Benchmark;
 
 BenchmarkRunner.Run(
     [
-        //typeof(StatesBenchmarks_SetItem), 
+        typeof(StatesBenchmarks_SetItem), 
         typeof(StatesBenchmarks_GetItem), 
-        //typeof(StatesBenchmarks_Compare)
-    ], 
-    DefaultConfig.Instance.WithOptions(ConfigOptions.DisableOptimizationsValidator));
+        typeof(StatesBenchmarks_Compare)
+    ]);
 
 
 //| Method | Mean | Error | StdDev |
