@@ -20,12 +20,12 @@ This is a wrapper for a State[] that provides methods for accessing indexes with
 Surprisingly yes, I compared setting a specific index, getting a specific index, and comparing two identical objects, and while the getting and setting were slower than (most of) the alternatives, when it comes to comparison it blew the others out of the water.
 
 ### Test Data
-The test data contains 1,000,000 randomly boolean values which is then stored in various formats:
-* List<bool>
-* Dictionary<int,bool>
+The test data contains 1,000,000 randomly generated boolean values which is then stored in various collections:
+* List\<bool>
+* Dictionary<int, bool>
 * StringBuilder
 * bool[]
-* States - the result of this project
+* States
   
 There is also a target index which is the target for both Get and Set tests (initially 500,000, now random from the range).
 
