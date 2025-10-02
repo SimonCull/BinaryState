@@ -10,10 +10,12 @@ It was fun, and I learned a lot about optimisation, data structures, and benchma
 ## What came out of it
 ### State.cs 
 [link](https://github.com/SimonCull/BinaryState/blob/master/BinaryState/State.cs)
+
 This is a wrapper for a `ulong` that provides accessors to each position in the binary representation of the number.
 
 ### States.cs
 [link](https://github.com/SimonCull/BinaryState/blob/master/BinaryState/States.cs)
+
 This is a wrapper for a State[] that provides methods for accessing each state in the collection.
 
 ## Does it work?
