@@ -8,15 +8,13 @@ The concept came up when discussing infinite loop detection - how was most effic
 It was fun, and I learned a lot about optimisation, data structures, and benchmarking.
 
 ## What came out of it
-### State.cs 
-[link](https://github.com/SimonCull/BinaryState/blob/master/BinaryState/State.cs)
+### [State.cs](https://github.com/SimonCull/BinaryState/blob/master/BinaryState/State.cs)
 
-This is a wrapper for a `ulong` that provides accessors to each position in the binary representation of the number.
+This is a wrapper for a `ulong` that provides accessors to each index in the binary representation of the number.
 
-### States.cs
-[link](https://github.com/SimonCull/BinaryState/blob/master/BinaryState/States.cs)
+### [States.cs](https://github.com/SimonCull/BinaryState/blob/master/BinaryState/States.cs)
 
-This is a wrapper for a State[] that provides methods for accessing each state in the collection.
+This is a wrapper for a State[] that provides methods for accessing indexes within each state in the collection (normalised from 0 - max capacity).
 
 ## Does it work?
 Surprisingly yes, I compared setting a specific index, getting a specific index, and comparing two identical objects, and while the getting and setting were slower than (most of) the alternatives, when it comes to comparison it blew the others out of the water.
