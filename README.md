@@ -5,7 +5,7 @@ An experiment into storing collections of binary states in 64-bit integers.
 The concept came up when discussing infinite loop detection - how was most efficient to store and compare states when deciding if an infinite loop was occuring - and it felt like a fun techinical investigation and an opportunity to play with bitwise operators.
 
 ## Was it worth it?
-It was fun, and I learned a lot about optimisation, data structures, and benchmarking.
+It was fun, and I learned a lot about optimisation, data structures, and benchmarking. I think [State.GetState()](https://github.com/SimonCull/BinaryState/blob/2184e0976e82c7b249001edba82024f97059ad5c/BinaryState/State.cs#L66) method is probably my favourite part of the whole project, it has a satisfying typewriter quality to the left shift, right shift to isolate the required index down to `1` or `0`.  Conversely [State.SetState()](https://github.com/SimonCull/BinaryState/blob/2184e0976e82c7b249001edba82024f97059ad5c/BinaryState/State.cs#L43) provided the largest challenge for figuring out how to only change the value if the value needed changing.
 
 ## What came out of it
 ### [State.cs](https://github.com/SimonCull/BinaryState/blob/master/BinaryState/State.cs)
@@ -14,7 +14,7 @@ This is a wrapper for a `ulong` that provides accessors to each index in the bin
 
 ### [States.cs](https://github.com/SimonCull/BinaryState/blob/master/BinaryState/States.cs)
 
-This is a wrapper for a State[] that provides methods for accessing indexes within each state in the collection (normalised from 0 - max capacity).
+This is a wrapper for a `State[]` that provides methods for accessing indexes within each state in the collection (normalised from 0 - max capacity).
 
 ## Does it work?
 Surprisingly yes, I compared setting a specific index, getting a specific index, and comparing two identical objects, and while the getting and setting were slower than (most of) the alternatives, when it comes to comparison it blew the others out of the water.
@@ -58,3 +58,7 @@ Compares two separate but identical collections
 | StringBuilder_Compare | 4,989.88 us | 96.439 us | 103.189 us |
 | Array_Compare | 1,227.57 us | 23.660 us | 30.764 us |
 | States_Compare | 54.02 us | 1.205 us | 3.476 us |
+
+
+## What Next?
+If I were to dig further into it I'd want to look at optimising the getters and setters in States to see if there's any time to be shaved off, 14ns is good, but it would be interesting to see if there is any time that can be shaved off
